@@ -343,7 +343,7 @@ public abstract class DatabaseMetadataCache<TObjectName, TDbType> : IDatabaseMet
 	/// <summary>
 	/// Parse a string and return the database specific representation of the database object's name.
 	/// </summary>
-	/// <param name="name"></param>
+	/// <param name="name">Name of the object.</param>
 	public TObjectName ParseObjectName(string name) => ParseObjectName(null, name);
 
 	/// <summary>
@@ -358,6 +358,12 @@ public abstract class DatabaseMetadataCache<TObjectName, TDbType> : IDatabaseMet
 	/// <returns>System.String.</returns>
 	/// <remarks>This assumes the column name wasn't already quoted.</remarks>
 	public abstract string QuoteColumnName(string columnName);
+
+	/// <summary>
+	/// Parse a string and return the database specific representation of the database object's name as a quoted string.
+	/// </summary>
+	/// <param name="name">Name of the object.</param>
+	public abstract string QuoteObjectName(string name);
 
 	/// <summary>
 	/// Registers a database type and its CLR equivalent.

@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net462;netstandard2.0;netcoreapp3.1;net6.0</TargetFrameworks>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Authors>Jonathan Allen</Authors>
+	  <Company>Tortuga Research</Company>
+	  <Copyright>Jonathan Allen 2022</Copyright>
+	  <Deterministic>true</Deterministic>
+	  <Version>1.0.0</Version>
+
+	  <Nullable>enable</Nullable>
+
+
+
+
+
+	  <Description>Database-backed Collection Classes</Description>
+	  <PackageTags>ORM DB Reflection</PackageTags>
+	  <LangVersion>10.0</LangVersion>
+	  <ProductName>Tortuga Chain</ProductName>
+
+	  
+
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+
+	  <PackageProjectUrl>https://github.com/TortugaResearch/Tortuga.Chain</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/TortugaResearch/Tortuga.Chain.git</RepositoryUrl>
+
+	  <RepositoryType>git</RepositoryType>
+
+	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	  <WarningsAsErrors />
+	  <RootNamespace>Tortuga.Chain.PersistentCollections</RootNamespace>
+	  <DocumentationFile>Tortuga.Chain.PersistentCollections.xml</DocumentationFile>
+	  
+	  
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\Shared\GlobalUsing.cs" Link="GlobalUsing.cs" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='Debug'">
+		<ProjectReference Include="..\Tortuga.Chain.Core\Tortuga.Chain.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='Release'">
+		<PackageReference Include="Tortuga.Chain.Core" Version="4.4.0" />
+	</ItemGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+</Project>

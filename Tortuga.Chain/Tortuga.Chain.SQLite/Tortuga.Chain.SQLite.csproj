@@ -11,7 +11,7 @@
 		<ProductName>Tortuga Chain</ProductName>
 		<Deterministic>true</Deterministic>
 
-		<Version>4.3.0</Version>
+		<Version>4.4.0</Version>
 
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
@@ -61,7 +61,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="Tortuga.Chain.Core" Version="4.3.0" />
+		<PackageReference Include="Tortuga.Chain.Core" Version="4.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>

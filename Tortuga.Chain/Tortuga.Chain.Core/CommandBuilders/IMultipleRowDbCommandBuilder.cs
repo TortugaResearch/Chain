@@ -71,6 +71,36 @@ public interface IMultipleRowDbCommandBuilder : ISingleRowDbCommandBuilder
 	ILink<List<byte[]?>> ToByteArrayOrNullList(ListOptions listOptions = ListOptions.None);
 
 	/// <summary>
+	/// Indicates the results should be materialized as a list of chars.
+	/// </summary>
+	/// <param name="columnName">Name of the desired column.</param>
+	/// <param name="listOptions">The list options.</param>
+	/// <returns></returns>
+	ILink<List<char>> ToCharList(string columnName, ListOptions listOptions = ListOptions.None);
+
+	/// <summary>
+	/// Indicates the results should be materialized as a list of chars.
+	/// </summary>
+	/// <param name="listOptions">The list options.</param>
+	/// <returns></returns>
+	ILink<List<char>> ToCharList(ListOptions listOptions = ListOptions.None);
+
+	/// <summary>
+	/// Indicates the results should be materialized as a list of chars.
+	/// </summary>
+	/// <param name="listOptions">The list options.</param>
+	/// <returns>Tortuga.Chain.ILink&lt;System.Collections.Generic.List&lt;System.Char&gt;&gt;.</returns>
+	ILink<List<char?>> ToCharOrNullList(ListOptions listOptions = ListOptions.None);
+
+	/// <summary>
+	/// Indicates the results should be materialized as a list of chars.
+	/// </summary>
+	/// <param name="columnName">Name of the desired column.</param>
+	/// <param name="listOptions">The list options.</param>
+	/// <returns>Tortuga.Chain.ILink&lt;System.Collections.Generic.List&lt;System.Char&gt;&gt;.</returns>
+	ILink<List<char?>> ToCharOrNullList(string columnName, ListOptions listOptions = ListOptions.None);
+
+	/// <summary>
 	/// Materializes the result as a list of objects.
 	/// </summary>
 	/// <typeparam name="TObject">The type of the model.</typeparam>

@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Data.SQLite;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using Tortuga.Chain.Core;
 using Tortuga.Chain.SQLite;
 
@@ -14,6 +15,17 @@ public partial class SQLiteDataSource : SQLiteDataSourceBase
 {
 	readonly AsyncReaderWriterLock m_SyncLock = new AsyncReaderWriterLock(); //Sqlite is single-threaded for writes. It says otherwise, but it spams the trace window with exceptions.
 	SQLiteMetadataCache m_DatabaseMetadata;
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="SQLiteDataSource"/> class.
+	/// </summary>
+	/// <param name="fileName">Name of the SQLite file.</param>
+	/// <param name="settings">Optional settings object.</param>
+	public SQLiteDataSource(FileInfo fileName, SQLiteDataSourceSettings? settings = null)
+		: this(fileName?.Name ?? throw new ArgumentNullException(nameof(fileName)),
+			  new SQLiteConnectionStringBuilder() { DataSource = fileName.FullName, Version = 3 }, settings)
+	{
+	}
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="SQLiteDataSource" /> class.

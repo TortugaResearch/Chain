@@ -303,14 +303,25 @@ public class MySqlMetadataCache : DatabaseMetadataCache<MySqlObjectName, MySqlDb
 	/// </summary>
 	/// <param name="columnName">Name of the column.</param>
 	/// <returns>System.String.</returns>
+	/// <exception cref="System.ArgumentException">columnName</exception>
 	/// <remarks>This assumes the column name wasn't already quoted.</remarks>
 	public override string QuoteColumnName(string columnName)
 	{
-		if (columnName == "*")
+		if (string.IsNullOrEmpty(columnName))
+			throw new ArgumentException($"{nameof(columnName)} is null or empty.", nameof(columnName));
+
+		if (columnName == "*" || columnName[0] == '`')
 			return columnName;
 
 		return "`" + columnName + "`";
 	}
+
+	/// <summary>
+	/// Parse a string and return the database specific representation of the database object's name as a quoted string.
+	/// </summary>
+	/// <param name="name">Name of the object.</param>
+	/// <returns>System.String.</returns>
+	public override string QuoteObjectName(string name) => ParseObjectName(name).ToQuotedString();
 
 	/// <summary>
 	/// Resets the metadata cache, clearing out all cached metadata.

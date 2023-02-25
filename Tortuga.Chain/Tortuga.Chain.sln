@@ -55,6 +55,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tortuga.Chain.CompiledMater
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentationDocNet", "DocumentationDocNet\DocumentationDocNet.csproj", "{64697C8B-60FD-4EE7-8560-37C4BD58580A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tortuga.Chain.PersistentCollections", "Tortuga.Chain.PersistentCollections\Tortuga.Chain.PersistentCollections.csproj", "{AEDA2433-228C-42C2-9DAA-60A595DA72A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{64697C8B-60FD-4EE7-8560-37C4BD58580A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64697C8B-60FD-4EE7-8560-37C4BD58580A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64697C8B-60FD-4EE7-8560-37C4BD58580A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEDA2433-228C-42C2-9DAA-60A595DA72A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEDA2433-228C-42C2-9DAA-60A595DA72A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEDA2433-228C-42C2-9DAA-60A595DA72A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEDA2433-228C-42C2-9DAA-60A595DA72A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

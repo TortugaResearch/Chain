@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tortuga.Chain.PersistentCollections</name>
+    </assembly>
+    <members>
+        <member name="T:Tortuga.Chain.PersistentCollections.PersistentDictionary`2">
+            <summary>
+            PersistentDictionary is a table-backed dictionary. Any operations performed against this object will be resolved by the underlying database. This object is thread safe.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.#ctor(Tortuga.Chain.DataSources.ICrudDataSource,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tortuga.Chain.PersistentCollections.PersistentDictionary`2"/> class.
+            </summary>
+            <param name="dataSource">The data source.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="keyColumnName">Name of the key column.</param>
+            <param name="valueColumnName">Name of the value column.</param>
+            <exception cref="T:Tortuga.Chain.MappingException">The table {tableName} doesn't have a column named {keyColumnName}</exception>
+            <exception cref="T:Tortuga.Chain.MappingException">The table {tableName} doesn't have a column named {valueColumnName}</exception>
+        </member>
+        <member name="P:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#IsReadOnly">
+            <summary>
+            Gets the is read only.
+            </summary>
+            <value>The is read only.</value>
+        </member>
+        <member name="P:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Keys">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.ICollection`1" /> containing the keys of the <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="P:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Values">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.ICollection`1" /> containing the values in the <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <value>The values.</value>
+        </member>
+        <member name="P:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Item(`0)">
+            <summary>
+            Gets or sets the value with the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>TValue.</returns>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds an element with the provided key and value to the <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <param name="key">The object to use as the key of the element to add.</param>
+            <param name="value">The object to use as the value of the element to add.</param>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.ICollection`1" /> contains a specific value.
+            </summary>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+            <returns>true if <paramref name="item" /> is found in the <see cref="T:System.Collections.Generic.ICollection`1" />; otherwise, false.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.ContainsKey(`0)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.IDictionary`2" /> contains an element with the specified key.
+            </summary>
+            <param name="key">The key to locate in the <see cref="T:System.Collections.Generic.IDictionary`2" />.</param>
+            <returns>true if the <see cref="T:System.Collections.Generic.IDictionary`2" /> contains an element with the key; otherwise, false.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1" /> to an <see cref="T:System.Array" />, starting at a particular <see cref="T:System.Array" /> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1" />. The <see cref="T:System.Array" /> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array" /> at which copying begins.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>An enumerator that can be used to iterate through the collection.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Remove(`0)">
+            <summary>
+            Removes the element with the specified key from the <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <param name="key">The key of the element to remove.</param>
+            <returns>true if the element is successfully removed; otherwise, false.  This method also returns false if <paramref name="key" /> was not found in the original <see cref="T:System.Collections.Generic.IDictionary`2" />.</returns>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+            <returns>true if <paramref name="item" /> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1" />; otherwise, false. This method also returns false if <paramref name="item" /> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1" />.</returns>
+        </member>
+        <member name="M:Tortuga.Chain.PersistentCollections.PersistentDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <paramref name="value" /> parameter. This parameter is passed uninitialized.</param>
+            <returns>true if the object that implements <see cref="T:System.Collections.Generic.IDictionary`2" /> contains an element with the specified key; otherwise, false.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+    </members>
+</doc>

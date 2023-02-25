@@ -10,7 +10,10 @@ class SupportsSqlQueriesTrait<TCommand, TParameter> : ISupportsSqlQueries
 	where TCommand : DbCommand
 	where TParameter : DbParameter
 {
-	IMultipleTableDbCommandBuilder ISupportsSqlQueries.Sql(string sqlStatement, object argumentValue)
+	[Partial("sqlStatement,argumentValue")]
+	public Func<string, object?, MultipleTableDbCommandBuilder<TCommand, TParameter>> OnSql { get; set; } = null!;
+
+	IMultipleTableDbCommandBuilder ISupportsSqlQueries.Sql(string sqlStatement, object? argumentValue)
 	{
 		return OnSql(sqlStatement, argumentValue);
 	}
@@ -33,12 +36,8 @@ class SupportsSqlQueriesTrait<TCommand, TParameter> : ISupportsSqlQueries
 	/// <param name="argumentValue">The argument value.</param>
 	/// <returns>SqlServerSqlCall.</returns>
 	[Expose]
-	public MultipleTableDbCommandBuilder<TCommand, TParameter> Sql(string sqlStatement, object argumentValue)
+	public MultipleTableDbCommandBuilder<TCommand, TParameter> Sql(string sqlStatement, object? argumentValue)
 	{
 		return OnSql(sqlStatement, argumentValue);
 	}
-
-	[Partial("sqlStatement,argumentValue")]
-	public Func<string, object?, MultipleTableDbCommandBuilder<TCommand, TParameter>> OnSql { get; set; } = null!;
 }
-
